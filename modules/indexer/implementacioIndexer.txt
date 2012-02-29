@@ -1,0 +1,37 @@
+David:  pues entonces qualsevol implementació funcionará be
+en el pitjor de les implementacions, que es O(n^2), son unes 40000 iteracions, que en una CPU moderna es casi instantani
+la que yo gaste per a commfranquicias y per a eneboo-tools es O(n)
+en una única passada trau els DELETE, INSERT, UPDATE
+ jo:  em fas por xD
+ixa implementació és molt xunga?
+ David:  un poquet... t'explique
+es basa en el supost de que tens dos llistes ordenades
+fiquem que son números... per exemple 1,2,5,7,9 i 1,2,3,5,8,9
+entonces, les iteres simultáneament, com si foren dos cursors
+agafes el primer número de cadascuna: 1 , 1
+si son iguals, tot OK, no hi ha canvi (o en alguns casos, un possible update)
+llegim el proxim: 2,2
+tot ok
+els proxims: 5,3
+com 5 > 3
+entonces saps que a la llista de l'esquerra falten números
+entonces, si la llista A es la original i la llista B es la nova, entonces saps que B ha agregat el número 3
+per tant INSERT 3
+i mous només el cursor de la llista B
+tornes a comparar: 5,5
+bueno... i aixina tot el rato
+quan es en sentit contrari, saps que es un delete
+ jo:  ja veus tu...
+sense paraules
+q gran!!
+jajaj
+ David:  no es complicat de entendre, pero quan el programes es un sistema prou delicat
+es costos de comprendre en el codi quan té que incrementar un cursor o el altre, etc...
+i un xicotet error pot fer que torne dades completament errónees sense que et dones compte
+ jo:  ok
+ho tindré en compte
+vaig a pegar-li a vore
+moltes gràcies tio
+i gràcies pel teu temps
+ David:  de res ;)
+ 

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<songs>
+<song>
+<title>CÂmon Girl</title>
+<artist>Red Hot Chili Peppers</artist>
+<album>Stadium Arcadium</album>
+<length>228</length>
+<filepath>../../files/cmon_girl_.mp3</filepath>
+<hashfile>9ff46e285770913c4e8b26dbabc6aa73</hashfile>
+
+</song>
+<song>
+<title>El Pasajero</title>
+<artist>Los Muertos de Cristo</artist>
+<album>Rapsodia Libertaria</album>
+<length>277</length>
+<filepath>../../files/El_pasajero-Los Muertos_ De Cris.mp3</filepath>
+<hashfile>4814bff679f0783dd9f865d29a9e3f1e</hashfile>
+
+</song>
+</songs>

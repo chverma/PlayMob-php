@@ -27,7 +27,7 @@ class XMLSerializer {
                     $key = $node_name;
                 }
 
-                $xml .= '<' . $key . '>' . self::generateXmlFromArray($value, $node_name) . '</' . $key . '>';
+                $xml .= '<' . $key . '>' . self::generateXmlFromArray($value, $node_name) . '</' . $key . '>'."\n";
             }
         } else {
             $xml = htmlspecialchars($array, ENT_QUOTES);
@@ -38,16 +38,16 @@ class XMLSerializer {
 
     //Functions adopted by @coguet.verd
     public static function generateValidXmlFromObjectArray($array, $node_block='nodes', $node_name='node') {
-	$xml = '<?xml version="1.0" encoding="UTF-8" ?>';
-         $xml .= '<' . $node_block . '>';
+	$xml = '<?xml version="1.0" encoding="UTF-8" ?>'."\n";
+         $xml .= '<' . $node_block . '>'."\n";
  	foreach ($array as $key=>$value) {
  	    $arr = get_object_vars($value);
  	    //print_r($arr);
-	    $xml .= '<' . $node_name . '>';
- 	    $xml .= self::generateXmlFromArray($arr, $node_block,$node_name);
-	    $xml .= '</' . $node_name . '>';
+	    $xml .= '<' . $node_name . '>'."\n";
+ 	    $xml .= self::generateXmlFromArray($arr, $node_block,$node_name)."\n";
+	    $xml .= '</' . $node_name . '>'."\n";
  	}
- 	$xml .= '</' . $node_block . '>';
+ 	$xml .= '</' . $node_block . '>'."\n";
 	return $xml;
     }
 }

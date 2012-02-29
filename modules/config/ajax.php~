@@ -1,0 +1,28 @@
+<?php
+(int) $metros = $_GET['metros'];
+if($metros > 0) {
+   process($metros);
+  }
+ 
+function process($metros) {
+   $db = mysql_connect('mysql_server', 'mysql_user', 'mysql_password');
+   if (!$db) {
+     die('Could not connect: ' . mysql_error());
+    }
+   if (!mysql_select_db('nombre_base_datos')) {
+     die('Could not select database: ' . mysql_error());
+    }   
+   $result = mysql_query("SELECT * FROM casas WHERE m2=".$metros);
+   if (!$result) {
+     die('Could not query:' . mysql_error());
+    }
+   $jsondata = array();
+   $i = 0;
+   while ($row = mysql_fetch_assoc($result)) {
+     $jsondata[$i]['id'] = $row['id'];
+     $jsondata[$i]['m2'] = $row['m2'];
+     $jsondata[$i]['hab'] = $row['hab'];
+     $jsondata[$i]['direccion'] = $row['direccion'];
+     $i++;
+  }
+   echo json_encode($jsondata);

@@ -1,0 +1,63 @@
+ <div id="player" class="main_background">
+        <div id="player_controls_playback">
+            <button id="player_play_pause" class="player_control main_asset" type="button" disabled="disabled"></button>
+            <button id="player_previous" class="player_control main_asset" type="button" disabled="disabled"></button>
+            <button id="player_next" class="player_control main_asset" type="button" disabled="disabled"></button>
+            <div id="player_times"><span id="player_elapsed">00:00</span> / <span id="player_duration">00:00</span></div>
+        </div>
+
+            
+        <div id="player_controls_right">
+            <button id="player_shuffle" class="player_control main_asset" type="button" data-translate-title="QUEUE_SHUFFLE_SONGS"></button>
+            <button id="player_loop" class="player_control none main_asset" type="button" data-translate-title="QUEUE_LOOP_SONGS"></button>
+            <button id="player_crossfade" class="player_control main_asset" type="button" data-translate-title="QUEUE_CROSSFADE_SONGS"></button>
+            <button id="player_options" class="player_control main_asset" type="button" data-translate-title="QUEUE_OPTIONS"></button>
+            <div id="player_volume_group">
+                <div id="volumeControl">
+                    <div id="volumeSlider"></div>
+                </div>
+
+                <button id="player_volume" class="player_control off main_asset" type="button" data-translate-title="QUEUE_SOUND_VOLUME_MUTE"></button>
+            </div>
+            <div id="player_radio">
+                <div id="player_radio_button" type="button" class="main_asset"><div id="player_radio_switch" class="main_asset"></div></div>
+                <span id="player_radio_label" data-translate-text="RADIO">Radio</span>
+            </div>
+        </div>
+
+        <div id="player_controls_seeking">
+
+            <div id="seeking_wrapper">
+                <div id="player_seeking_back" class="bar">
+                    <div class="cap_right seeking_asset">
+                        <div class="cap_left seeking_asset">
+                            <div class="inner seeking_asset">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="player_seeking_buffer" class="bar buffer">
+                    <div class="cap_right seeking_asset">
+                        <div class="cap_left seeking_asset">
+                            <div class="inner seeking_asset">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="player_seeking_progress" class="bar progress">
+                    <div class="cap_right seeking_asset">
+                        <div class="cap_left seeking_asset">
+                            <div class="inner seeking_asset">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="player_seeking_scrubber" class="scrubber"></div>
+            </div>
+        </div>
+            
+        <div id="ytSwfWrapper" class="clear"></div>
+    </div>

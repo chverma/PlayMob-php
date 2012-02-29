@@ -1,0 +1,749 @@
+<songs>
+<song>
+<title>Torture Me</title>
+<artist>Red Hot Chili Peppers</artist>
+<album>Stadium Arcadium</album>
+<length>224</length>
+<filepath>../../files/Stadium_Arcadium/CD1/108-red_hot_chili_peppers-torture_me.mp3</filepath>
+<hashfile>67fe03bba489f0027751c34d8d0a1e87</hashfile>
+
+</song>
+<song>
+<title>Strip My Mind</title>
+<artist>Red Hot Chili Peppers</artist>
+<album>Stadium Arcadium</album>
+<length>259</length>
+<filepath>../../files/Stadium_Arcadium/CD1/109-red_hot_chili_peppers-strip_my_mind.mp3</filepath>
+<hashfile>b033bd5736d5331995baca49ea70f0e4</hashfile>
+
+</song>
+<song>
+<title>Wet Sand</title>
+<artist>Red Hot Chili Peppers</artist>
+<album>Stadium Arcadium</album>
+<length>309</length>
+<filepath>../../files/Stadium_Arcadium/CD1/cmon_girl (1).mp3</filepath>
+<hashfile>92047145795c6890e53e94465147c264</hashfile>
+
+</song>
+<song>
+<title>Snow (Hey Oh)</title>
+<artist>Red Hot Chili Peppers</artist>
+<album>Stadium Arcadium</album>
+<length>334</length>
+<filepath>../../files/Stadium_Arcadium/CD1/102-red_hot_chili_peppers-snow_(hey_oh).mp3</filepath>
+<hashfile>36792f78e49e209078cfb2c5c40777fc</hashfile>
+
+</song>
+<song>
+<title>Hey</title>
+<artist>Red Hot Chili Peppers</artist>
+<album>Stadium Arcadium</album>
+<length>339</length>
+<filepath>../../files/Stadium_Arcadium/CD1/cmon_girl (2).mp3</filepath>
+<hashfile>0b16a5379ca5a784e464daa9aaa99efe</hashfile>
+
+</song>
+<song>
+<title>Slow Cheetah</title>
+<artist>Red Hot Chili Peppers</artist>
+<album>Stadium Arcadium</album>
+<length>320</length>
+<filepath>../../files/Stadium_Arcadium/CD1/107-red_hot_chili_peppers-slow_cheetah.mp3</filepath>
+<hashfile>a6eb06cf5bac22367908b24934ddd244</hashfile>
+
+</song>
+<song>
+<title>Warlocks</title>
+<artist>Red Hot Chili Peppers</artist>
+<album>Stadium Arcadium</album>
+<length>205</length>
+<filepath>../../files/Stadium_Arcadium/CD1/111-red_hot_chili_peppers-warlocks.mp3</filepath>
+<hashfile>43e671cef63323bef859e2f04021dd83</hashfile>
+
+</song>
+<song>
+<title>Hump De Bump</title>
+<artist>Red Hot Chili Peppers</artist>
+<album>Stadium Arcadium</album>
+<length>213</length>
+<filepath>../../files/Stadium_Arcadium/CD1/105-red_hot_chili_peppers-hump_de_bump.mp3</filepath>
+<hashfile>d9a5ccff9982ff12aa84809dea7adc92</hashfile>
+
+</song>
+<song>
+<title>CÂmon Girl</title>
+<artist>Red Hot Chili Peppers</artist>
+<album>Stadium Arcadium</album>
+<length>228</length>
+<filepath>../../files/Stadium_Arcadium/CD1/cmon_girl.mp3</filepath>
+<hashfile>9ff46e285770913c4e8b26dbabc6aa73</hashfile>
+
+</song>
+<song>
+<title>Charlie</title>
+<artist>Red Hot Chili Peppers</artist>
+<album>Stadium Arcadium</album>
+<length>277</length>
+<filepath>../../files/Stadium_Arcadium/CD1/103-red_hot_chili_peppers-charlie.mp3</filepath>
+<hashfile>5a593ab962ddca14d8acd40bd8cbf86a</hashfile>
+
+</song>
+<song>
+<title>Especially In Michigan</title>
+<artist>Red Hot Chili Peppers</artist>
+<album>Stadium Arcadium</album>
+<length>241</length>
+<filepath>../../files/Stadium_Arcadium/CD1/110-red_hot_chili_peppers-especially_in_michigan.mp3</filepath>
+<hashfile>1c97427e97429017f90abad7718c1d31</hashfile>
+
+</song>
+<song>
+<title>SheÂs Only 18</title>
+<artist>Red Hot Chili Peppers</artist>
+<album>Stadium Arcadium</album>
+<length>205</length>
+<filepath>../../files/Stadium_Arcadium/CD1/106-red_hot_chili_peppers-shes_only_18.mp3</filepath>
+<hashfile>9120c1695ebc199787c1e7e8002ec30a</hashfile>
+
+</song>
+<song>
+<title>Dani California</title>
+<artist>Red Hot Chili Peppers</artist>
+<album>Stadium Arcadium</album>
+<length>283</length>
+<filepath>../../files/Stadium_Arcadium/CD1/cmon_girl (4).mp3</filepath>
+<hashfile>d6a99477fee3a8168170667ef24efb95</hashfile>
+
+</song>
+<song>
+<title>Stadium Arcadium</title>
+<artist>Red Hot Chili Peppers</artist>
+<album>Stadium Arcadium</album>
+<length>315</length>
+<filepath>../../files/Stadium_Arcadium/CD1/104-red_hot_chili_peppers-stadium_arcadium.mp3</filepath>
+<hashfile>306f86ef6847cdefc64af998fca9ea72</hashfile>
+
+</song>
+<song>
+<title>Storm In A Teacup</title>
+<artist>Red Hot Chili Peppers</artist>
+<album>Stadium Arcadium</album>
+<length>225</length>
+<filepath>../../files/Stadium_Arcadium/CD2/211-red_hot_chili_peppers-storm_in_a_teacup.mp3</filepath>
+<hashfile>3e1436777c7040e543abd45e881519ce</hashfile>
+
+</song>
+<song>
+<title>So Much I</title>
+<artist>Red Hot Chili Peppers</artist>
+<album>Stadium Arcadium</album>
+<length>224</length>
+<filepath>../../files/Stadium_Arcadium/CD2/210-red_hot_chili_peppers-so_much_i.mp3</filepath>
+<hashfile>63b014139f76c8aca1e11b3cd5391b03</hashfile>
+
+</song>
+<song>
+<title>Turn It Again</title>
+<artist>Red Hot Chili Peppers</artist>
+<album>Stadium Arcadium</album>
+<length>366</length>
+<filepath>../../files/Stadium_Arcadium/CD2/213-red_hot_chili_peppers-turn_it_again.mp3</filepath>
+<hashfile>39a1313450844a4e912857f438870ec9</hashfile>
+
+</song>
+<song>
+<title>Death Of A Martian</title>
+<artist>Red Hot Chili Peppers</artist>
+<album>Stadium Arcadium</album>
+<length>265</length>
+<filepath>../../files/Stadium_Arcadium/CD2/214-red_hot_chili_peppers-death_of_a_martian.mp3</filepath>
+<hashfile>b7805c97987ec19a72aa4e6528f10fff</hashfile>
+
+</song>
+<song>
+<title>Desecration Smile</title>
+<artist>Red Hot Chili Peppers</artist>
+<album>Stadium Arcadium</album>
+<length>302</length>
+<filepath>../../files/Stadium_Arcadium/CD2/201-red_hot_chili_peppers-desecration_smile.mp3</filepath>
+<hashfile>89018f9e3fc311b110d5685e52147f30</hashfile>
+
+</song>
+<song>
+<title>Tell Me Baby</title>
+<artist>Red Hot Chili Peppers</artist>
+<album>Stadium Arcadium</album>
+<length>247</length>
+<filepath>../../files/Stadium_Arcadium/CD2/202-red_hot_chili_peppers-tell_me_baby.mp3</filepath>
+<hashfile>69ec3f47e01f7f120233b3c3bac33886</hashfile>
+
+</song>
+<song>
+<title>If</title>
+<artist>Red Hot Chili Peppers</artist>
+<album>Stadium Arcadium</album>
+<length>172</length>
+<filepath>../../files/Stadium_Arcadium/CD2/207-red_hot_chili_peppers-if.mp3</filepath>
+<hashfile>4abccc804970f2c5c44d669b3189ecbe</hashfile>
+
+</song>
+<song>
+<title>21st Century</title>
+<artist>Red Hot Chili Peppers</artist>
+<album>Stadium Arcadium</album>
+<length>262</length>
+<filepath>../../files/Stadium_Arcadium/CD2/204-red_hot_chili_peppers-21st_century.mp3</filepath>
+<hashfile>a56efe4a82ffa71cb923705c45237d54</hashfile>
+
+</song>
+<song>
+<title>We Believe</title>
+<artist>Red Hot Chili Peppers</artist>
+<album>Stadium Arcadium</album>
+<length>216</length>
+<filepath>../../files/Stadium_Arcadium/CD2/212-red_hot_chili_peppers-we_believe.mp3</filepath>
+<hashfile>3e320f0b78c2ad030bb5cc170e3d116e</hashfile>
+
+</song>
+<song>
+<title>Animal Bar</title>
+<artist>Red Hot Chili Peppers</artist>
+<album>Stadium Arcadium</album>
+<length>325</length>
+<filepath>../../files/Stadium_Arcadium/CD2/209-red_hot_chili_peppers-animal_bar.mp3</filepath>
+<hashfile>1b97300c1270ea921ccbf9ac07071363</hashfile>
+
+</song>
+<song>
+<title>Hard To Concentrate</title>
+<artist>Red Hot Chili Peppers</artist>
+<album>Stadium Arcadium</album>
+<length>242</length>
+<filepath>../../files/Stadium_Arcadium/CD2/203-red_hot_chili_peppers-hard_to_concentrate.mp3</filepath>
+<hashfile>71cfa480567d72bf6c7b03bed2198b86</hashfile>
+
+</song>
+<song>
+<title>She Looks To Me</title>
+<artist>Red Hot Chili Peppers</artist>
+<album>Stadium Arcadium</album>
+<length>246</length>
+<filepath>../../files/Stadium_Arcadium/CD2/205-red_hot_chili_peppers-she_looks_to_me.mp3</filepath>
+<hashfile>74269853fdfa422486d18f4709629910</hashfile>
+
+</song>
+<song>
+<title>Readymade</title>
+<artist>Red Hot Chili Peppers</artist>
+<album>Stadium Arcadium</album>
+<length>270</length>
+<filepath>../../files/Stadium_Arcadium/CD2/206-red_hot_chili_peppers-readymade.mp3</filepath>
+<hashfile>264d7510bcc7f7f277481528c2f59340</hashfile>
+
+</song>
+<song>
+<title>Make You Feel Better</title>
+<artist>Red Hot Chili Peppers</artist>
+<album>Stadium Arcadium</album>
+<length>232</length>
+<filepath>../../files/Stadium_Arcadium/CD2/208-red_hot_chili_peppers-make_you_feel_better.mp3</filepath>
+<hashfile>c5cc13fb642b5e16422c86402d682b6c</hashfile>
+
+</song>
+<song>
+<title>El Pasajero</title>
+<artist>Los Muertos de Cristo</artist>
+<album>Rapsodia Libertaria</album>
+<length>277</length>
+<filepath>../../files/El_pasajero-Los Muertos_ De Cris.mp3</filepath>
+<hashfile>4814bff679f0783dd9f865d29a9e3f1e</hashfile>
+
+</song>
+<song>
+<title>Animal caliente</title>
+<artist>Barricada</artist>
+<album>Mordiscos</album>
+<length>179</length>
+<filepath>../../files/latidos_y_mordiscos/2-09 Animal caliente 1.mp3</filepath>
+<hashfile>f1d58cff7a263c8fa5814a44d989be39</hashfile>
+
+</song>
+<song>
+<title>Deja que esto no acabe nunca</title>
+<artist>Barricada</artist>
+<album>Mordiscos</album>
+<length>267</length>
+<filepath>../../files/latidos_y_mordiscos/2-08 Deja que esto no acabe nunca.mp3</filepath>
+<hashfile>3826213601d8214d2aa51d95b60d046b</hashfile>
+
+</song>
+<song>
+<title>En la esquina del zorro</title>
+<artist>Barricada</artist>
+<album>Mordiscos</album>
+<length>172</length>
+<filepath>../../files/latidos_y_mordiscos/2-04 En la esquina del zorro.mp3</filepath>
+<hashfile>60516862672bcd2c69badfe3756e7612</hashfile>
+
+</song>
+<song>
+<title>Animal caliente</title>
+<artist>Barricada</artist>
+<album>Mordiscos</album>
+<length>217</length>
+<filepath>../../files/latidos_y_mordiscos/2-07 Animal caliente.mp3</filepath>
+<hashfile>c667c4cd8930a86e45e9806edd4a3df3</hashfile>
+
+</song>
+<song>
+<title>Tu nombre</title>
+<artist>Barricada</artist>
+<album>Mordiscos</album>
+<length>218</length>
+<filepath>../../files/latidos_y_mordiscos/2-01 Tu nombre.mp3</filepath>
+<hashfile>6b3e31891a1f1f81c216a6530d9f79f0</hashfile>
+
+</song>
+<song>
+<title>Voy muriendo</title>
+<artist>Barricada</artist>
+<album>Mordiscos</album>
+<length>228</length>
+<filepath>../../files/latidos_y_mordiscos/2-06 Voy muriendo.mp3</filepath>
+<hashfile>c0a69fb626314a2cb21038845311bfcf</hashfile>
+
+</song>
+<song>
+<title>No hay tregua</title>
+<artist>Barricada</artist>
+<album>Mordiscos</album>
+<length>244</length>
+<filepath>../../files/latidos_y_mordiscos/2-05 No hay tregua.mp3</filepath>
+<hashfile>8367e688bb0b432cce85e01e2042b663</hashfile>
+
+</song>
+<song>
+<title>Juegos ocultos</title>
+<artist>Barricada</artist>
+<album>Mordiscos</album>
+<length>230</length>
+<filepath>../../files/latidos_y_mordiscos/2-02 Juegos ocultos.mp3</filepath>
+<hashfile>cdf013d4be1394aafe20ba8d0395d4f5</hashfile>
+
+</song>
+<song>
+<title>MaÃ±ana Sera Igual</title>
+<artist>Barricada</artist>
+<album>Latidos Y Mordiscos</album>
+<length>239</length>
+<filepath>../../files/latidos_y_mordiscos/2-03 ManÌana Sera Igual.mp3</filepath>
+<hashfile>53f0d0a0b4611532aca797667f77d3db</hashfile>
+
+</song>
+<song>
+<title>Track 9</title>
+<artist>Unknown</artist>
+<album>Untitled - 13-12-07 (1)</album>
+<length>238</length>
+<filepath>../../files/suddenlyi.mp3</filepath>
+<hashfile>8053f4ba0ec97a2eb547dbd1ac364433</hashfile>
+
+</song>
+<song>
+<title>J Al Andalus Remix</title>
+<artist>Narco</artist>
+<album>El atraco</album>
+<length>268</length>
+<filepath>../../files/Narco/El atraco/04 - Narco - El atraco (J Al Andalus Remix).mp3</filepath>
+<hashfile>cdd907d8c368aa631bc61346cf939591</hashfile>
+
+</song>
+<song>
+<title>El Pernales Mix con Nilo MC</title>
+<artist>Narco</artist>
+<album>El atraco</album>
+<length>268</length>
+<filepath>../../files/Narco/El atraco/02 - Narco - El atraco (El Pernales Mix con Nilo MC).mp3</filepath>
+<hashfile>67cb40231bc18aaab1456154e19f13e5</hashfile>
+
+</song>
+<song>
+<title>El Pernales Mix instrumental</title>
+<artist>Narco</artist>
+<album>El atraco</album>
+<length>271</length>
+<filepath>../../files/Narco/El atraco/05 - Narco - El atraco (El Pernales Mix instrumental).mp3</filepath>
+<hashfile>e99b965f0fc9c4d360ea5a33b7584c37</hashfile>
+
+</song>
+<song>
+<title>Version album</title>
+<artist>Narco</artist>
+<album>El atraco</album>
+<length>186</length>
+<filepath>../../files/Narco/El atraco/01 - Narco - El atraco (Version album).mp3</filepath>
+<hashfile>0a22237d68f1e499ce09c636ac3af8d4</hashfile>
+
+</song>
+<song>
+<title>Starmixers</title>
+<artist>Narco</artist>
+<album>El atraco</album>
+<length>168</length>
+<filepath>../../files/Narco/El atraco/03 - Narco - El atraco (Starmixers).mp3</filepath>
+<hashfile>ce243c3112de99431e2cd8e758af21aa</hashfile>
+
+</song>
+<song>
+<title>Nuestras Mulas</title>
+<artist>Narco</artist>
+<album>Chaparron de plomo</album>
+<length>206</length>
+<filepath>../../files/Narco/ChaparrÃ³n de Plomo/10 - Nuestras Mulas.mp3</filepath>
+<hashfile>0efbfd3823b3b3544cf9a5a0e4064455</hashfile>
+
+</song>
+<song>
+<title>ViviÃ³ Mas Que 1000 Viejos</title>
+<artist>Narco</artist>
+<album>Chaparron de plomo</album>
+<length>224</length>
+<filepath>../../files/Narco/ChaparrÃ³n de Plomo/09 - ViviÃ³ Mas Que 1000 Viejos.mp3</filepath>
+<hashfile>cc2afe5be1a1a77c3e69449ba6bacda3</hashfile>
+
+</song>
+<song>
+<title>La pasma esta buscando</title>
+<artist>Narco</artist>
+<album>Chaparron de plomo</album>
+<length>213</length>
+<filepath>../../files/Narco/ChaparrÃ³n de Plomo/05 - La pasma esta buscando.mp3</filepath>
+<hashfile>dcd8bf082ff84dca81864f7beb524461</hashfile>
+
+</song>
+<song>
+<title>Vizco</title>
+<artist>Narco</artist>
+<album>Chaparron de plomo</album>
+<length>278</length>
+<filepath>../../files/Narco/ChaparrÃ³n de Plomo/02 - Vizco.mp3</filepath>
+<hashfile>7104b258b2313d29e0de0eec546cfefe</hashfile>
+
+</song>
+<song>
+<title>Miseria, muerte y sangre</title>
+<artist>Narco</artist>
+<album>Chaparron de plomo</album>
+<length>180</length>
+<filepath>../../files/Narco/ChaparrÃ³n de Plomo/04 - Miseria, muerte y sangre.mp3</filepath>
+<hashfile>dbb956fdccb7362076bc240752f0c4bf</hashfile>
+
+</song>
+<song>
+<title>El Encarguito</title>
+<artist>Narco</artist>
+<album>Chaparron de plomo</album>
+<length>227</length>
+<filepath>../../files/Narco/ChaparrÃ³n de Plomo/03 - El Encarguito.mp3</filepath>
+<hashfile>7e25fc76438d8ea233662a921c797a1a</hashfile>
+
+</song>
+<song>
+<title>De BajÃ³n</title>
+<artist>Narco</artist>
+<album>Chaparron de plomo</album>
+<length>267</length>
+<filepath>../../files/Narco/ChaparrÃ³n de Plomo/12 - De BajÃ³n.mp3</filepath>
+<hashfile>a213230fd472d7fc56d61393fb4d94f6</hashfile>
+
+</song>
+<song>
+<title>Actitud gamberra</title>
+<artist>Narco</artist>
+<album>Chaparron de plomo</album>
+<length>233</length>
+<filepath>../../files/Narco/ChaparrÃ³n de Plomo/11 - Actitud gamberra.mp3</filepath>
+<hashfile>2a2fac6b6cde7d7ff4218a5942c65039</hashfile>
+
+</song>
+<song>
+<title>Chivato Manso</title>
+<artist>Narco</artist>
+<album>Chaparron de plomo</album>
+<length>210</length>
+<filepath>../../files/Narco/ChaparrÃ³n de Plomo/07 - Chivato Manso.mp3</filepath>
+<hashfile>2468c1087cb717e667e0f3876e57f671</hashfile>
+
+</song>
+<song>
+<title>A tomar por culo el mundo</title>
+<artist>Narco</artist>
+<album>Chaparron de plomo</album>
+<length>192</length>
+<filepath>../../files/Narco/ChaparrÃ³n de Plomo/01 - A tomar por culo el mundo.mp3</filepath>
+<hashfile>4b2fbb81184405eb8bd255ea8c571874</hashfile>
+
+</song>
+<song>
+<title>El Caraloco</title>
+<artist>Narco</artist>
+<album>Chaparron de plomo</album>
+<length>141</length>
+<filepath>../../files/Narco/ChaparrÃ³n de Plomo/06 - El Caraloco.mp3</filepath>
+<hashfile>ad955807e9496a61b69975c3b789943c</hashfile>
+
+</song>
+<song>
+<title>El Cotarro</title>
+<artist>Narco</artist>
+<album>Chaparron de plomo</album>
+<length>206</length>
+<filepath>../../files/Narco/ChaparrÃ³n de Plomo/08 - El Cotarro.mp3</filepath>
+<hashfile>8871f5011d84348595f024abb0ac2ca3</hashfile>
+
+</song>
+<song>
+<title>Falsa confusion</title>
+<artist>Narco</artist>
+<album>Talego pon pon</album>
+<length>215</length>
+<filepath>../../files/Narco/Talego Pon Pon/12-Falsa confusion.mp3</filepath>
+<hashfile>97f3d2f2d934114855dbf931b8be5ce1</hashfile>
+
+</song>
+<song>
+<title>Polvo de muerte</title>
+<artist>Narco</artist>
+<album>Talego pon pon</album>
+<length>300</length>
+<filepath>../../files/Narco/Talego Pon Pon/07-Polvo de muerte.mp3</filepath>
+<hashfile>4935ac9f1fa0d16c3da07b25f1924c0f</hashfile>
+
+</song>
+<song>
+<title>Tu dios de madera</title>
+<artist>Narco</artist>
+<album>Talego pon pon</album>
+<length>280</length>
+<filepath>../../files/Narco/Talego Pon Pon/01-Tu dios de madera.mp3</filepath>
+<hashfile>ad08d6dc7c7d09aa0af296d2f7a4c3a0</hashfile>
+
+</song>
+<song>
+<title>Viejo Lobo</title>
+<artist>Narco</artist>
+<album>Talego pon pon</album>
+<length>179</length>
+<filepath>../../files/Narco/Talego Pon Pon/05-Viejo Lobo.mp3</filepath>
+<hashfile>53b26567cf549e6b346155f3a795fa3a</hashfile>
+
+</song>
+<song>
+<title>A cada paso</title>
+<artist>Narco</artist>
+<album>Talego pon pon</album>
+<length>203</length>
+<filepath>../../files/Narco/Talego Pon Pon/02-A cada paso.mp3</filepath>
+<hashfile>7c301b9d535f94cf11fa4c3d56387262</hashfile>
+
+</song>
+<song>
+<title>La yerba del diablo</title>
+<artist>Narco</artist>
+<album>Talego pon pon</album>
+<length>247</length>
+<filepath>../../files/Narco/Talego Pon Pon/08-La yerba del diablo.mp3</filepath>
+<hashfile>daf61df1d90752b1dec38d311ffc44bd</hashfile>
+
+</song>
+<song>
+<title>Ambiente cadaver</title>
+<artist>Narco</artist>
+<album>Talego pon pon</album>
+<length>255</length>
+<filepath>../../files/Narco/Talego Pon Pon/09-Ambiente cadaver.mp3</filepath>
+<hashfile>5cc8de6e42aa67c3c00cc26c3674993c</hashfile>
+
+</song>
+<song>
+<title>Siempre enmarronado</title>
+<artist>Narco</artist>
+<album>Talego pon pon</album>
+<length>196</length>
+<filepath>../../files/Narco/Talego Pon Pon/03-Siempre enmarronado.mp3</filepath>
+<hashfile>0a134ba5b0d58515a77f7f7add81f097</hashfile>
+
+</song>
+<song>
+<title>Patrulla de vecinos</title>
+<artist>Narco</artist>
+<album>Talego pon pon</album>
+<length>182</length>
+<filepath>../../files/Narco/Talego Pon Pon/04-Patrulla de vecinos.mp3</filepath>
+<hashfile>f48378240f8900aef0215fe42c281647</hashfile>
+
+</song>
+<song>
+<title>La Cucaracha</title>
+<artist>Narco</artist>
+<album>Talego pon pon</album>
+<length>100</length>
+<filepath>../../files/Narco/Talego Pon Pon/10-La Cucaracha.mp3</filepath>
+<hashfile>a4c13c3df7078bcd12d489b10b615ca7</hashfile>
+
+</song>
+<song>
+<title>Asesino del pueblo</title>
+<artist>Narco</artist>
+<album>Talego pon pon</album>
+<length>162</length>
+<filepath>../../files/Narco/Talego Pon Pon/06-Asesino del pueblo.mp3</filepath>
+<hashfile>8c4233cbbe170c0633189ec36f0aadcf</hashfile>
+
+</song>
+<song>
+<title>Guasa</title>
+<artist>Narco</artist>
+<album>Talego pon pon</album>
+<length>175</length>
+<filepath>../../files/Narco/Talego Pon Pon/11-Guasa.mp3</filepath>
+<hashfile>a77d22f1e3bf094c5becfce4d7306893</hashfile>
+
+</song>
+<song>
+<title>Ha escapado</title>
+<artist>Narco</artist>
+<album>Penados i rebeldes</album>
+<length>24</length>
+<filepath>../../files/Narco/Penados i Rebeldes/13 - Ha escapado.mp3</filepath>
+<hashfile>f4212e29e3773005869710f4b16fc372</hashfile>
+
+</song>
+<song>
+<title>Somos el grito</title>
+<artist>Narco</artist>
+<album>Penados i rebeldes</album>
+<length>214</length>
+<filepath>../../files/Narco/Penados i Rebeldes/09 - Somos el grito.mp3</filepath>
+<hashfile>f1e4624901e654fc6b80c6fa65811d30</hashfile>
+
+</song>
+<song>
+<title>El Atraco</title>
+<artist>Narco</artist>
+<album>Penados i rebeldes</album>
+<length>184</length>
+<filepath>../../files/Narco/Penados i Rebeldes/02 - El Atraco.mp3</filepath>
+<hashfile>ed9e3fe8659bc663b572e31ac9e4cfac</hashfile>
+
+</song>
+<song>
+<title>Ateo</title>
+<artist>Narco</artist>
+<album>Penados i rebeldes</album>
+<length>229</length>
+<filepath>../../files/Narco/Penados i Rebeldes/12 - Ateo (No me sonriÃ³ el seÃ±or).mp3</filepath>
+<hashfile>9ec5a960da658bfab1ed1e6eaf5ab5a8</hashfile>
+
+</song>
+<song>
+<title>Seco en un saco</title>
+<artist>Narco</artist>
+<album>Penados i rebeldes</album>
+<length>145</length>
+<filepath>../../files/Narco/Penados i Rebeldes/14 - Seco en un saco.mp3</filepath>
+<hashfile>138c5118aa5543379d9554720b3dd529</hashfile>
+
+</song>
+<song>
+<title>Multivicios</title>
+<artist>Narco</artist>
+<album>Penados i rebeldes</album>
+<length>31</length>
+<filepath>../../files/Narco/Penados i Rebeldes/03 - Multivicios.mp3</filepath>
+<hashfile>2891d772a8102dd0089672a059273bad</hashfile>
+
+</song>
+<song>
+<title>Colegas Narcos</title>
+<artist>Narco</artist>
+<album>Penados i rebeldes</album>
+<length>201</length>
+<filepath>../../files/Narco/Penados i Rebeldes/10 - Colegas Narcos.mp3</filepath>
+<hashfile>b3962ef55b7d5b72072b10db130960b0</hashfile>
+
+</song>
+<song>
+<title>Si 2 eran 2</title>
+<artist>Narco</artist>
+<album>Penados i rebeldes</album>
+<length>205</length>
+<filepath>../../files/Narco/Penados i Rebeldes/04 - Si 2 eran 2.mp3</filepath>
+<hashfile>ba83ac66f78e862249cbfcf26377f1f0</hashfile>
+
+</song>
+<song>
+<title>Masacre En La Mierda-Ciudad</title>
+<artist>Narco</artist>
+<album>Penados i rebeldes</album>
+<length>337</length>
+<filepath>../../files/Narco/Penados i Rebeldes/01 - Masacre En La Mierda-Ciudad.mp3</filepath>
+<hashfile>2c7978f97f611a8164d221ee62a6e470</hashfile>
+
+</song>
+<song>
+<title>Perros Malos</title>
+<artist>Narco</artist>
+<album>Penados i rebeldes</album>
+<length>190</length>
+<filepath>../../files/Narco/Penados i Rebeldes/05 - Perros Malos.mp3</filepath>
+<hashfile>528fb02fae52c360b89dfddc3290e192</hashfile>
+
+</song>
+<song>
+<title>Control</title>
+<artist>Narco</artist>
+<album>Penados i rebeldes</album>
+<length>243</length>
+<filepath>../../files/Narco/Penados i Rebeldes/11 - Control.mp3</filepath>
+<hashfile>a209a2d310af3e37a147b6eaf5a75772</hashfile>
+
+</song>
+<song>
+<title>Otro Altercado</title>
+<artist>Narco</artist>
+<album>Penados i rebeldes</album>
+<length>204</length>
+<filepath>../../files/Narco/Penados i Rebeldes/06 - Otro Altercado.mp3</filepath>
+<hashfile>2539084d5a9e8498d237b987c2f76ce8</hashfile>
+
+</song>
+<song>
+<title>Keta-Cuestes</title>
+<artist>Narco</artist>
+<album>Penados i rebeldes</album>
+<length>43</length>
+<filepath>../../files/Narco/Penados i Rebeldes/16 - Keta-Cuestes.mp3</filepath>
+<hashfile>885e493c6d00d172d4df31e2ec387ec3</hashfile>
+
+</song>
+<song>
+<title>Madre</title>
+<artist>Narco</artist>
+<album>Penados i rebeldes</album>
+<length>233</length>
+<filepath>../../files/Narco/Penados i Rebeldes/08 - Madre.mp3</filepath>
+<hashfile>b4e7afaf76db9320ef34f44798221a3e</hashfile>
+
+</song>
+<song>
+<title>Y tu madre estÃ¡ tan orgullosa</title>
+<artist>Narco</artist>
+<album>Penados i rebeldes</album>
+<length>164</length>
+<filepath>../../files/Narco/Penados i Rebeldes/15 - Y tu madre estÃ¡ tan orgullosa de tÃ­.mp3</filepath>
+<hashfile>5d962e03ad20dfdd1956002b9f531dce</hashfile>
+
+</song>
+</songs>

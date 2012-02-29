@@ -1,0 +1,9 @@
+<?php
+define("_BDName","playmob");
+define("_BDServer","localhost");
+define("_BDUser","play");
+define("_BDPassword","play");
+define("_DBPort","5432");
+
+define("_SONGPATH","../../files");
+?>

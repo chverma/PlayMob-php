@@ -1,0 +1,34 @@
+<?php
+(int) $where = $_GET['filter'];
+if($where)
+ $where="id=".$where;
+getSongs($where);
+ 
+function getSongs($where="1=1") {
+   $driver = "host=localhost dbname=playmob user=play password=play sslmode=disable";
+   $db=pg_connect($driver);
+   if (!$db) {
+     die('Could not connect: ');
+    }
+
+   $result = pg_query($db,"SELECT * FROM songs ");//WHERE ".$where
+   if (!$result) {
+     die('Could not query:');
+    }
+   $jsondata = array();
+   $i = 0;
+   while ($row = pg_fetch_assoc($result)) {
+     $jsondata[$i]['id'] = $row['id'];
+     $jsondata[$i]['title'] = $row['title'];
+     $jsondata[$i]['artist'] = $row['artist'];
+     $jsondata[$i]['album'] = $row['album'];
+     $jsondata[$i]['slength'] = $row['slength'];
+     $jsondata[$i]['hashfile'] = $row['hashfile'];
+     $jsondata[$i]['filepath'] = $row['filepath'];
+     $jsondata[$i]['where'] = $where;
+     $i++;
+  }
+  echo json_encode($jsondata);
+  pg_close($db);
+ }
+?>

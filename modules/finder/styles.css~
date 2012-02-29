@@ -1,0 +1,55 @@
+.ui-btn-inner ui-li {
+	min-height:80px;
+}
+#logo{
+	width:200px;
+	float:left;
+}
+#searchPanel{
+	padding-top:3px;
+	float:left;
+	
+	width:110px;
+}
+#inTitle{
+	margin-left:3px;
+	width:60px;
+	float:left;
+}
+.ui-header ui-bar-a{
+	max-height:10px;
+	display:block;
+}
+
+#btnSearch{
+	margin-top:5px;
+	float:left;
+	display:block;
+	width:27px;
+	height:27px;
+	background:url(img/btnsearch.png) no-repeat;
+}
+#btnSearch:Hover{
+	background:url(img/btnsearch_over.png) no-repeat;
+	cursor:pointer;
+}
+
+#footer{
+	position:fixed;
+	bottom:0px;
+	height:35px;
+}
+/* First Automatically Created Player. In the code is named as #player */
+#mep_0,#player{
+	position:fixed;
+	bottom:0px;
+}
+
+.ui-li-heading{
+}
+
+.ui-li-listens{
+  width:2em;
+  position:relative;
+  right:0px;
+}

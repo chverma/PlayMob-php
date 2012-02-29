@@ -1,0 +1,38 @@
+sudo apt-get install php-pear 
+  605  clear
+  606  sudo apt-chache search ktag
+  607  sudo apt-cache search ktag
+  608  sudo apt-cache search php-
+  609  cd Descargas/
+  610  ls
+  611  clea
+  612  clear
+  613  sudo pear install KTaglib-0.2.0.tgz 
+  614* ls /tmp/pear/temp/
+  615  sudo pecl install KTaglib-0.2.0.tgz 
+  616  sudo apt-get install g++
+  617  sudo pecl install KTaglib-0.2.0.tgz 
+  618  sudo apt-get install re2c 
+  619  sudo pecl install KTaglib-0.2.0.tgz 
+  620  sudo apt-get install gawk
+  621  sudo pecl install KTaglib-0.2.0.tgz 
+  622  sudo apt-get install icc suncc
+  623  sudo apt-get install icc-profiles
+  624  sudo pecl install KTaglib-0.2.0.tgz 
+  625  sudo apt-get install taglib
+  626  cd
+  627  cd taglib-1.7/
+  628  sudo make install
+  629  sudo make
+  630  cat INSTALL 
+  631  cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_RELEASE_TYPE=Release .
+  632  sudo apt-get install cmake
+  633  cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_RELEASE_TYPE=Release .
+  634  make
+  635  sudo make install 
+  636  cd ..
+  637  cd Descargas/
+  638  sudo pecl install KTaglib-0.2.0.tgz 
+  639  sudo nano /etc/php5/apache2/php.ini 
+  640  sudo /etc/init.d/apache2 restart
+  641  history

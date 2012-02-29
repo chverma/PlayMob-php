@@ -1,0 +1,28 @@
+function results(data) {
+     $("div.info").html('').show();
+     $.each(data,function(index,value) {
+       $("div.info").append("<div class=\"resultado\">"); $("div.info").append("W: "+data[index].where+"<br/>");
+       $("div.info").append("ID: "+data[index].id);
+       $("div.info").append("title: "+data[index].title);
+       $("div.info").append("artist: "+data[index].artist);
+       $("div.info").append("album: "+data[index].album);
+       $("div.info").append("slength: "+data[index].slength);
+       $("div.info").append("filepath: "+data[index].filepath);
+       $("div.info").append("hashfile: "+data[index].hashfile);
+       $("div.info").append("</div>");
+     });
+ }
+
+$(document).ready(function(){
+$("#myid").click(function(){
+  $.ajax({
+    data: "filter=2",
+    type: "GET",
+    dataType: "json",
+    url: "casas.php",
+    success: function(data){
+       results(data);
+     }
+   });
+  });
+});

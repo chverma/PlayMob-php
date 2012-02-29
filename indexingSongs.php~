@@ -1,0 +1,74 @@
+<?php
+  $GLOBALS['songspath']  = "files";
+  $songs = array();
+  $XMLSongs="";
+
+function init()
+{
+    if(requeriments()){
+      playMob_indexingFolder($GLOBALS['songspath']);
+    }
+}
+
+function requeriments()
+{
+  if (!extension_loaded("ktaglib")){
+    echo "<h1>The library 'ktaglib' isn't loaded</h1>";
+    return false;
+  }
+}
+
+function playMob_getXMLFromObjectArray($songs)
+{
+  return XMLSerializer::generateValidXmlFromObjectArray($songs,"songs","song");
+}
+  
+function playMob_indexingFolder($folder)
+{
+   global $songs;
+   if(file_exists($folder)){
+	  if ($currentDir = opendir($folder)) {
+	    while (($file = readdir($currentDir)) != false ) {
+	      $filePath = $folder."/".$file;
+	      if (!is_dir($filePath)){
+		$extension=strstr($file, '.');
+		if($extension == '.mp3' || $extension == '.ogg'){
+		  try{
+		    $mpeg = new KTaglib_MPEG_File($filePath);
+		  }catch(Exception $e){
+		    echo "ERROR: ".$e->getMessage();
+		  }
+		  $audioProperties = $mpeg->getAudioProperties();
+		  $ID3v1Tag = $mpeg->getID3v1Tag();
+		  $title = $ID3v1Tag->getTitle();
+		  $artist = $ID3v1Tag->getArtist();
+		  $album = $ID3v1Tag->getAlbum();
+		  $length = $audioProperties->getLength();
+		  if($title!=""){
+ 		    try{
+		      $song = new song($title,$artist,$album,$length,$filePath,hash_file('md5', $filePath));
+		      array_push($songs,$song);
+		    }catch(Exception $e){
+		      echo "ERROR: ".$e->getMessage();
+		    }
+		  }
+		}
+	      }else{
+		if($file!="." && $file!=".."){
+		  playMob_indexingFolder($filePath);
+		}
+	      }
+	    }
+	  }else{
+	    print "This directory '".$folder."' isn't readable, please change this permissions";
+	  }
+	  closedir($currentDir);
+	  //print "fotosproductos/$tipo/{$tipo}{$actual}.jpg";
+   }else{
+     print "This directory '".$folder."' isn't exist, please create it or change it";
+   }
+
+}
+?>
+
+	
