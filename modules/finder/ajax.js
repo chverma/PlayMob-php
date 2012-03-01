@@ -136,7 +136,6 @@ function sendListened(idSong){
 }
 
 function resultListen(data){
-  alert(data[0].hashfile);
   var counter = document.getElementById(data[0].hashfile);
   
    while(counter.hasChildNodes())

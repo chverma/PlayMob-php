@@ -86,7 +86,7 @@ function getSongs($where="1=1") {
 function incrementSong(){
    if(isset($_GET['idSong'])) (string) $idSong = $_GET['idSong'];
    $conn = new BD();
-   $result = $conn->execute("SELECT listenSong('".$idSong."')");
+   $result = $conn->execute("SELECT * FROM listenSong('".$idSong."') AS foo(listens integer, hashfile varchar)");
    
     if (!$result) {
      die('Could not query');
