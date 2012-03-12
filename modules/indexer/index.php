@@ -1,19 +1,47 @@
 <?php
 $noError = true;
 $songs = array();
-require("../config/dbconfig.php");
+require("../components/dbconfig.php");
+session_start();
+  if(!isset($_SESSION["user"]))
+    echo "<script>document.location='/PlayMob/';</script>";
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<HTML>
-   <HEAD>
-      <title>PlayMob: Play Mobility -> Indexer Files</title>
-      <link rel="stylesheet" href="../../style/default.css" type="text/css">
-      <meta http-equiv="content-type" content="text/html" charset="utf-8" />
-   </HEAD>
-   <BODY>
-      <?php indexer_init(); ?>
-   </BODY>
-</HTML>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es-es" lang="es-es">
+<head>
+  <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <title>PlayMob: Play Mobility!</title>
+  <!-- JQueryMobile js & css -->
+  <link rel="stylesheet" href="<?php echo _LIBRARY_PATH;?>JQueryMobile/jquery.mobile-1.0b2.min.css" />
+  <script src="<?php echo _LIBRARY_PATH;?>JQueryMobile/jquery.min.1.6.js"></script><!--http://code.jquery.com/jquery-1.6.2.min.js-->
+  <script src="<?php echo _LIBRARY_PATH;?>JQueryMobile/jquery.mobile-1.0b2.min.js"></script>
+  <!-- modifications -->
+  <script type="text/javascript" src="ajax.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body><!-- onResize="resizeDocument(this)" --> 
+  <div data-role="header" data-position="inline">
+    <!--a data-icon="home" href="" data-ajax="false">Home</a--> 
+    <h1 id="logo" >#Update your song list ;-)</h1>
+  </div>
+<div data-role="content" role="main">
+  <ul id="messages" class="ui-listview" data-role='listview'>
+	<?php indexer_init(); ?>
+    </ul>
+</div>
+<div data-theme="a" data-role="footer">
+                <h3>
+                    #SongList
+                </h3>
+            </div>  
+<script>
+    var currentKey = '<?php echo hash('sha1',$myKey);?>';
+</script>
+</body>
+</html>
+
 
 <?php
 
@@ -25,8 +53,16 @@ function indexer_init()
       indexer_indexingFolder(_SONGPATH);
       include('XMLSerializer.inc');
       //indexer_getXMLFromObjectArray($songs);
-	if($noError)
-		echo "<h1 class='successful'>The indexer process was finished successfully!</h1>";
+	if($noError){
+	  echo '<li data-theme="c" class="ui-btn ui-btn-icon-right ui-li ui-li-has-thumb ui-btn-down-a ui-btn-up-c">';
+	  echo '  <div class="ui-btn-inner ui-li">';
+	  echo '	      <div class="ui-btn-text">';
+	  echo '		  <h3 class="ui-li-heading">The indexer process was finished successfully :)</h3>';
+	  echo '	      </div>';
+	  echo '	  <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>';
+	  echo '  </div>';
+	  echo '</li>';
+	}
       //CURRENT XML & HASH
       $newXML = utf8_encode(indexer_getXMLFromObjectArray($songs));
       $newHashXML = hash("md5",$newXML);
@@ -41,12 +77,33 @@ function indexer_init()
 	$diff = compareSongs($dbXML,$newXML);
       
 	if(!saveXML($newXML)){
-	  echo "<h1 class='error'>Error insert!</h1>";
+	  echo '<li data-theme="c" style="color:red;" class="ui-btn ui-btn-icon-right ui-li ui-li-has-thumb ui-btn-down-a ui-btn-up-c">';
+	  echo '  <div class="ui-btn-inner ui-li">';
+	  echo '	      <div class="ui-btn-text">';
+	  echo '		  <h3 class="ui-li-heading">Error insert :(</h3>';
+	  echo '	      </div>';
+	  echo '	  <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>';
+	  echo '  </div>';
+	  echo '</li>';
 	}else{
-	  echo "<h1 class='successful'>Database was updated successfully!</h1>";
+	  echo '<li data-theme="c" class="ui-btn ui-btn-icon-right ui-li ui-li-has-thumb ui-btn-down-a ui-btn-up-c">';
+	  echo '  <div class="ui-btn-inner ui-li">';
+	  echo '	      <div class="ui-btn-text">';
+	  echo '		  <h3 class="ui-li-heading">Database was updated successfully :)</h3>';
+	  echo '	      </div>';
+	  echo '	  <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>';
+	  echo '  </div>';
+	  echo '</li>';
 	}
       }else{
-	echo "<h1 class='successful'>The database songs are already updated</h1>";
+	echo '<li data-theme="c" class="ui-btn ui-btn-icon-right ui-li ui-li-has-thumb ui-btn-down-a ui-btn-up-c">';
+	  echo '  <div class="ui-btn-inner ui-li">';
+	  echo '	      <div class="ui-btn-text">';
+	  echo '		  <h3 class="ui-li-heading">The database songs are already updated</h3>';
+	  echo '	      </div>';
+	  echo '	  <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>';
+	  echo '  </div>';
+	  echo '</li>';
       }
     }
 }
@@ -55,7 +112,14 @@ function indexer_requeriments()
 {
 	global $noError;
 	if (!extension_loaded("ktaglib")){
-		echo "<h1 class='error'>The library 'ktaglib' isn't loaded</h1>";
+	  echo '<li data-theme="c" class="ui-btn ui-btn-icon-right ui-li ui-li-has-thumb ui-btn-down-a ui-btn-up-c" style="color:red;">';
+	  echo '  <div class="ui-btn-inner ui-li">';
+	  echo '	      <div class="ui-btn-text">';
+	  echo '		  <h3 class="ui-li-heading">The library \'ktaglib\' isn\'t loaded :$</h3>';
+	  echo '	      </div>';
+	  echo '	  <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>';
+	  echo '  </div>';
+	  echo '</li>';
 		$noError=false;
 		return false;
 	}
@@ -117,7 +181,14 @@ function indexer_indexingFolder($folder)
 		  try{
 		    $mpeg = new KTaglib_MPEG_File($filePath);
 		  }catch(Exception $e){
-		    echo "<h1 class='error'>Error-> ".$e->getMessage()."</h1>";
+		    echo '<li data-theme="c" class="ui-btn ui-btn-icon-right ui-li ui-li-has-thumb ui-btn-down-a ui-btn-up-c" style="color:red;">';
+	  echo '  <div class="ui-btn-inner ui-li">';
+	  echo '	      <div class="ui-btn-text">';
+	  echo '		  <h3 class="ui-li-heading">'.$e->getMessage().'</h3>';
+	  echo '	      </div>';
+	  echo '	  <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>';
+	  echo '  </div>';
+	  echo '</li>';
 		    $noError=false;
 		  }
 		  $audioProperties = $mpeg->getAudioProperties();
@@ -134,7 +205,14 @@ function indexer_indexingFolder($folder)
 		      $song = new song($title,$artist,$album,$length,$filePath,hash_file('md5', $filePath));
 		      array_push($songs,$song);
 		    }catch(Exception $e){
-		      echo "<h1 class='error'>Error-> ".$e->getMessage()."</h1>";
+		      echo '<li data-theme="c" class="ui-btn ui-btn-icon-right ui-li ui-li-has-thumb ui-btn-down-a ui-btn-up-c" style="color:red;">';
+	  echo '  <div class="ui-btn-inner ui-li">';
+	  echo '	      <div class="ui-btn-text">';
+	  echo '		  <h3 class="ui-li-heading">'.$e->getMessage().'</h3>';
+	  echo '	      </div>';
+	  echo '	  <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>';
+	  echo '  </div>';
+	  echo '</li>';
 		      $noError=false;
 		    }
 // 		  }
@@ -146,15 +224,29 @@ function indexer_indexingFolder($folder)
 	      }
 	    }
 	  }else{
-	    echo "<h1 class='error'>Error-> This directory '".$folder."' isn't readable, please change this permissions</h1>";
+	    echo '<li data-theme="c" class="ui-btn ui-btn-icon-right ui-li ui-li-has-thumb ui-btn-down-a ui-btn-up-c" style="color:red;">';
+	  echo '  <div class="ui-btn-inner ui-li">';
+	  echo '	      <div class="ui-btn-text">';
+	  echo '		  <h3 class="ui-li-heading">This directory \''.$folder.'\' isn\'t readable, please change this permissions</h3>';
+	  echo '	      </div>';
+	  echo '	  <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>';
+	  echo '  </div>';
+	  echo '</li>';
 	    $noError=false;
 	  }
 	  closedir($currentDir);
    }else{
-     	echo "<h1 class='error'>Error-> This directory '".$folder."' isn't exist, please create it or change it</h1>";
+	
 	$noError=false;
    }
-
+echo '<li data-theme="c" class="ui-btn ui-btn-icon-right ui-li ui-li-has-thumb ui-btn-down-a ui-btn-up-c" style="color:red;">';
+	  echo '  <div class="ui-btn-inner ui-li">';
+	  echo '	      <div class="ui-btn-text">';
+	  echo '		  <h3 class="ui-li-heading" >This directory \''.$folder.'\' isn\'t exist, please create it or change it</h3>';
+	  echo '	      </div>';
+	  echo '	  <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>';
+	  echo '  </div>';
+	  echo '</li>';
 }
 
 function getLastXML()
@@ -205,14 +297,29 @@ function compareSongs($old,$new){
     $result = strcmp ($newArray[$contNew],$oldArray[$contOld]);
      //echo "ITERACIO-> ".$newArray[$contNew]." - ".$oldArray[$contOld]."<br/>";
     if($result > 0 ) {
-      echo "<h1 class='error'>Removed: ".$oldArray[$contOld]."</h1>";
+      echo '<li data-theme="c" class="ui-btn ui-btn-icon-right ui-li ui-li-has-thumb ui-btn-down-a ui-btn-up-c">';
+	  echo '  <div class="ui-btn-inner ui-li">';
+	  echo '	      <div class="ui-btn-text">';
+	  echo '		  <h3 class="ui-li-heading">Removed: '.$oldArray[$contOld].'</h3>';
+	  echo '	      </div>';
+	  echo '	  <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>';
+	  echo '  </div>';
+	  echo '</li>';
       $conn = new BD();
       $conn->execute("DELETE FROM songs where hashfile='".$oldArray[$contOld]."'");
       $contOld++;
     }else if($result < 0){
       $result = $newXml->xpath("/songs/song[hashfile='".$newArray[$contNew]."']");
       while(list( , $node) = each($result)) {
-	echo "<h1 class='successful'>Added: ".$node->title."</h1>";
+	echo '<li data-theme="c" class="ui-btn ui-btn-icon-right ui-li ui-li-has-thumb ui-btn-down-a ui-btn-up-c">';
+	  echo '  <div class="ui-btn-inner ui-li">';
+	  echo '	      <div class="ui-btn-text">';
+	  echo '		  <h3 class="ui-li-heading">Added: '.$node->title.'</h3>';
+	  echo '	      </div>';
+	  echo '	  <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>';
+	  echo '  </div>';
+	  echo '</li>';
+
 	$conn = new BD();
 	$conn->execute("INSERT INTO songs (title,filepath,hashfile,artist,album) VALUES ('".$node->title."','".$node->filepath."','".$node->hashfile."','".$node->artist."','".$node->album."')");
       }
@@ -230,7 +337,14 @@ function compareSongs($old,$new){
 	$oldFilePath = $node->filepath;
       }
       if(strcmp($oldFilePath,$newFilePath)!=0){
-	echo "<h1 class='successful'>Updated: ".substr($newFilePath, 12)."</h1>";
+	echo '<li data-theme="c" class="ui-btn ui-btn-icon-right ui-li ui-li-has-thumb ui-btn-down-a ui-btn-up-c">';
+	  echo '  <div class="ui-btn-inner ui-li">';
+	  echo '	      <div class="ui-btn-text">';
+	  echo '		  <h3 class="ui-li-heading">Updated: '.substr($newFilePath, 12).'</h3>';
+	  echo '	      </div>';
+	  echo '	  <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>';
+	  echo '  </div>';
+	  echo '</li>';
 	$conn = new BD();
 	$conn->execute("UPDATE songs SET filepath='".$newFilePath."' WHERE hashfile = '".$newArray[$contNew]."'");
       }

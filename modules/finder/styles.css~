@@ -37,19 +37,36 @@
 #footer{
 	position:fixed;
 	bottom:0px;
-	height:35px;
 }
 /* First Automatically Created Player. In the code is named as #player */
-#mep_0,#player{
+#mep_0{
 	position:fixed;
 	bottom:0px;
+	width:100%;
+	background:url(../JohnPlayer/build/media/background.png);
 }
 
 .ui-li-heading{
+  padding-left:20px;
 }
 
-.ui-li-listens{
-  width:2em;
-  position:relative;
-  right:0px;
+/*********Album Box ************/
+
+.albumBox{
+  height:70px;
+}
+
+.albumBox-listens{
+  width:100px;
+  float:left;
+  margin-left:15px;
+}
+.caseImg{
+  padding-left:20px;
+  float:left;
+}
+.calaix{
+  float:left;
+  margin-left:20px;
+  min-width:10em;
 }

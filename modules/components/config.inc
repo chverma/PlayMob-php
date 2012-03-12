@@ -8,9 +8,9 @@ define("_DBPort","5432");
 define("_SONGPATH","/PlayMob/files/");
 define("_LIBRARY_PATH","/PlayMob/lib/");
 
-define("_HOME_PATH","/PlayMob/modules/home/");
-define("_CONFIG_PATH","/PlayMob/modules/config/");
 define("_FINDER_PATH","/PlayMob/modules/finder/");
+define("_HOME_PATH","/PlayMob/modules/home/");
+define("_INDEXER_PATH","/PlayMob/modules/indexer/");
 
 define("_HEAD","/PlayMob/modules/shared/head.php");
 define("_LOGO","PlayMob: Play Mobility!");

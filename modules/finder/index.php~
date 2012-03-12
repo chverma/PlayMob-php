@@ -1,62 +1,68 @@
 <?php
   $myKey = date("dd-mm-YYYY")."88886666";
+  //include_once("mobiledetect.php");
+  require("../components/config.inc");
+  session_start();
+  if(!isset($_SESSION["user"]))
+    echo "<script>document.location='/PlayMob/';</script>";
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es-es" lang="es-es">
-  <head>
+<head>
   <meta http-equiv="content-type" content="text/html" charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"> 
-	<title>PlayMob: Play Mobility!</title>
-	<!-- JQueryMobile js & css -->
-	<link rel="stylesheet" href="jquery.mobile-1.0b2.min.css" />
-	<script src="jquery.min.1.6.js"></script><!--http://code.jquery.com/jquery-1.6.2.min.js-->
-	<script src="jquery.mobile-1.0b2.min.js"></script>
-	<!-- modifications -->
-	<script type="text/javascript" src="ajax.js"></script>
-	<link rel="stylesheet" href="styles.css" />
-	<script src="../johnPlayer/build/mediaelement-and-player.min.js"></script>
-	<link rel="stylesheet" href="../johnPlayer/build/mediaelementplayer.min.css" />
+  <title>PlayMob: Play Mobility!</title>
+  <!-- JQueryMobile js & css -->
+  <link rel="stylesheet" href="<?php echo _LIBRARY_PATH;?>JQueryMobile/jquery.mobile-1.0b2.min.css" />
+  <script src="<?php echo _LIBRARY_PATH;?>JQueryMobile/jquery.min.1.6.js"></script><!--http://code.jquery.com/jquery-1.6.2.min.js-->
+  <script src="<?php echo _LIBRARY_PATH;?>JQueryMobile/jquery.mobile-1.0b2.min.js"></script>
+  <!-- modifications -->
+  <script type="text/javascript" src="ajax.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="<?php echo _LIBRARY_PATH;?>johnPlayer/build/mediaelement-and-player.min.js"></script>
+  <link rel="stylesheet" href="<?php echo _LIBRARY_PATH;?>johnPlayer/build/mediaelementplayer.min.css" />
 </head>
-<body onResize="resizeDocument(this)" onLoad="loadSongs('top',currentKey)"> 
-<div data-role="header" data-position="inline">
- 	<a data-icon="home">Home</a> 
-	<h1 id="logo" >PlayMob: Play Mobility!</h1>
-	<div id="searchPanel">
-		<input type="text" id="inTitle" onkeypress="sendRequestP(event,currentKey)"
-		value="Search"
-    		onblur="if(value=='') value = 'Search'" 
-    		onfocus="if(value=='Search') value = ''">
-		<div onclick="sendRequestP(false)"><a id="btnSearch" ></a></div>
-	</div>
-	<a id="allSongs" onclick="sendRequest()">All Songs</a>
-</div>
-   
-  <ul id="songlist" class="ui-listview" data-role='listview'>
+
+<body onLoad="loadSongList('top')"><!-- onResize="resizeDocument(this)" --> 
+  <div data-role="header" data-position="inline">
+    <a data-icon="home" href="<?php echo _HOME_PATH;?>" data-ajax="false">Home</a> 
+    <h1 id="logo" ><?php echo _LOGO;?></h1>
+    <div id="searchPanel" >
+      <input type="text" id="searchBox" onkeypress="searchBox_pressed(event)" value="Search" onblur="if(value=='') value = 'Search'" onfocus="if(value=='Search') value = ''">
+      <a onclick="searchBox_clicked()" id="btnSearch" ></a>
+    </div>
+    <!--a id="allSongs" onclick="loadSongList('top')">All Songs</a-->
+  </div>
+
+  <div data-role="content">
+    <ul id="songlist" class="ui-listview" data-role='listview'>
 	<li data-theme="c" class="ui-btn ui-btn-icon-right ui-li ui-li-has-thumb ui-btn-down-a ui-btn-up-c">
 		  <div class="ui-btn-inner ui-li">
 		      <div class="ui-btn-text">
-			  <!--a href="#" class="ui-link-inherit" data-transition="slide">-->
-			  <!--<img src="images/intro_menaje.jpg" class="ui-li-thumb">-->
 			  <h3 class="ui-li-heading">Search it!</h3>
-<!--			  <p class="ui-li-desc">
-			      <audio id="player2" src="../johnPlayer/media/AirReview-Landmarks-02-ChasingCorporate.mp3" type="audio/mp3" controls="controls"></audio>
-			  </p>-->
-			<!--  </a>-->
 		      </div>
 		  <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>
 		  </div>
 	</li>
-  </ul>
+    </ul>
+  </div>
 
 <div id="footer" data-role="footer" data-position="inline">
   <audio id="player" src="#" type="audio/mp3" controls="controls">		
   </audio>
   <script>
-    var winW = $(window).width();
-    $('#player').mediaelementplayer({audioWidth: winW,
-    // height of audio player
-    audioHeight: 30});
-  
+    <?php
+      //$uagent = new uagent_info();
+      //if($uagent->DetectTierTablet()){
+	echo "var winW = $(window).width();";
+	echo "$('#player').mediaelementplayer({audioWidth: winW,audioHeight: 30});";
+      //} ?>
+    $(window).scroll(function(){
+      if ($(window).scrollTop() == $(document).height() - $(window).height()){
+	//if(!firstRun)
+	  extendSongsList();
+      }
+    });
     var currentKey = '<?php echo hash('sha1',$myKey);?>';
   </script>
 </div>

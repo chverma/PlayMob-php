@@ -1,3 +1,8 @@
+#invPage{
+    display:none;
+}
+
+
 .ui-btn-inner ui-li {
 	min-height:80px;
 }

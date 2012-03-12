@@ -1,0 +1,60 @@
+function processSongData(data) {
+ var listView = document.getElementById("categories");
+ while(listView.hasChildNodes()) listView.removeChild(listView.firstChild);	
+
+     $.each(data,function(index,value) {
+	var listView = document.getElementById("categories");
+	if(data[index].first){
+	       var catResult = document.createElement("li");
+	       catResult.setAttribute("data-theme","c");
+	       catResult.setAttribute("class","ui-btn ui-btn-icon-right ui-li ui-li-has-thumb ui-btn-down-a ui-btn-up-c");
+	       
+	       catResult.setAttribute("href",data[index].path);
+	       
+	       var innerResult = document.createElement("div");
+	       innerResult.setAttribute("class","ui-btn-inner ui-li");
+
+		var btnText = document.createElement("div");
+	       	btnText.setAttribute("class","ui-btn-text");
+
+			var a = document.createElement("a");
+			a.setAttribute("href",data[index].path);
+			a.setAttribute("data-ajax",data[index].ajax);
+			="false"
+			//a.setAttribute("data-transition","slide");
+		
+			//<!--<img src="images/intro_menaje.jpg" class="ui-li-thumb">-->
+			var heading = document.createElement("h3");
+		       	heading.setAttribute("class","ui-li-heading");
+			heading.appendChild(document.createTextNode(data[index].name));
+		a.appendChild(heading);
+		btnText.appendChild(a);
+		innerResult.appendChild(btnText);
+			var span = document.createElement("span");
+			span.setAttribute("class","ui-icon ui-icon-arrow-r ui-icon-shadow");
+		innerResult.appendChild(span);
+		catResult.appendChild(innerResult);
+
+	       listView.appendChild(catResult);
+	}else{
+		var catResult = document.createElement("li");
+	       	catResult.setAttribute("data-theme","c");
+	       	catResult.setAttribute("class","ui-btn ui-btn-icon-right ui-li ui-li-has-thumb ui-btn-down-a ui-btn-up-c");
+		catResult.appendChild(document.createTextNode("No results :S"));
+		listView.appendChild(catResult);
+	}
+     });
+ }
+
+function getCategories(menu){
+  $.ajax({
+	    data: "menu="+menu+"&key="+currentKey,
+	    type: "GET",
+	    dataType: "json",
+	    url: "categories.php",
+	    success: function(data){
+	       processSongData(data);
+	     }
+	   });
+  
+}

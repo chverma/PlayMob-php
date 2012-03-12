@@ -1,5 +1,5 @@
 <?php
-  require("../config/dbconfig.php");
+  require("../components/dbconfig.php");
 
 init();
 function init(){
@@ -27,30 +27,46 @@ function gettingSongs(){
   getSongs($where);
 }
 function getFilter(){
+  $title="";
+  $album="";
+  $artist="";
+  $toPos=0;
+  $fromPos=0;
   if(isset($_GET['title'])) (string) $title = $_GET['title'];
   if(isset($_GET['album'])) (string) $album = $_GET['album'];
   if(isset($_GET['artist'])) (string) $artist = $_GET['artist'];
   if(isset($_GET['list'])) (string) $list = $_GET['list'];
-  
-  if($title) $where.="title LIKE '%".$title."%'";
-  if($album){
-    if($where) $where.=" AND "; 
-    $where.="album LIKE '%".$album."%'";
+  if(isset($_GET['from'])) (string) $from = $_GET['from'];
+  if(isset($_GET['pos'])){ 
+    (integer) $fromPos = $_GET['pos'];
+    $fromPos=$fromPos*6;
   }
-  if($artist){
-    if($where) $where.=" AND ";
-    $where.="artist LIKE '%".$artist."%'";
+  //$fromPos=0;
+  $where="";
+  if($title!="") $where.="title ILIKE '%".$title."%'";
+
+  if($album!=""){
+    if($where!=""){
+      if($from=="home") $where.=" OR "; else  $where.=" AND ";
+    }
+    $where.="album ILIKE '%".$album."%'";
+  }
+  if($artist!=""){
+    if($where!=""){
+      if($from=="home") $where.=" OR "; else  $where.=" AND ";
+    }
+    $where.="artist ILIKE '%".$artist."%'";
   }
 
-  if(!$where) $where = "1 = 1";
+  if($where=="") $where = "1 = 1";
 
   if($list){
     switch($list){
     case "top":
-      $where.=" ORDER BY listens DESC LIMIT 5";
+      $where.=" ORDER BY listens DESC LIMIT 6 OFFSET $fromPos";
       break;
     default:
-      $where.=" ORDER BY listens DESC LIMIT 5";
+      $where.=" ORDER BY listens DESC LIMIT 6 OFFSET $fromPos";
       break;
     }
   }
