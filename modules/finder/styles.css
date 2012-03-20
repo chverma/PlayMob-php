@@ -20,6 +20,9 @@
 	max-height:10px;
 	display:block;
 }
+#searchBox{
+	float:left;
+}
 
 #btnSearch{
 	margin-top:5px;
@@ -29,6 +32,7 @@
 	height:27px;
 	background:url(img/btnsearch.png) no-repeat;
 }
+
 #btnSearch:Hover{
 	background:url(img/btnsearch_over.png) no-repeat;
 	cursor:pointer;
@@ -50,6 +54,10 @@
   padding-left:20px;
 }
 
+.listButton{
+  text-align:center;
+  padding-top:2.1em;
+}
 /*********Album Box ************/
 
 .albumBox{
@@ -70,3 +78,32 @@
   margin-left:20px;
   min-width:50em;
 }
+
+.ui-btn-down-a, .ui-btn-up-c{
+  min-height:70px;
+}
+
+.links:link { /* unvisited link */
+  color:black;
+}      
+.links:visited {/* visited link */
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0.6em 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Helvetica,Arial,sans-serif;
+    text-decoration: none;
+    color: #444444;
+    font-weight: bold;
+    text-shadow: 0 1px 1px #F6F6F6;
+}
+.links:hover { /* mouse over link */
+  color:black;
+} 
+.links:active {/* selected link */ 
+  color:black;
+  
+}  

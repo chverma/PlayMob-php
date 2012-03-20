@@ -18,11 +18,9 @@ function processSongData(data) {
 	       	btnText.setAttribute("class","ui-btn-text");
 
 			var a = document.createElement("a");
+			a.setAttribute("class","links");
 			a.setAttribute("href",data[index].path);
 			a.setAttribute("data-ajax",data[index].ajax);
-			//a.setAttribute("data-transition","slide");
-		
-			//<!--<img src="images/intro_menaje.jpg" class="ui-li-thumb">-->
 			var heading = document.createElement("h3");
 		       	heading.setAttribute("class","ui-li-heading");
 			heading.appendChild(document.createTextNode(data[index].name));

@@ -2,10 +2,38 @@
   session_start();
   if(!isset($_SESSION["user"]))
     echo "<script>document.location='/PlayMob/';</script>";
-
+    
   $myKey = date("dd-mm-YYYY")."88886666";
   //include_once("mobiledetect.php");
   require("../components/config.inc");
+  if(isset($_GET['by']))
+    $by = $_GET['by'];
+
+  switch($by){
+    case "album":
+      if(isset($_GET['idartist']))
+	$loadList="loadAlbumList('&idartist=".$_GET['idartist']."')";
+      else {
+	$loadList="loadAlbumList('&list=top')";
+      }
+      
+      $extendList="extendAlbumsList();";
+      break;
+    case "artist":
+      $loadList="loadArtistList('&list=top')";
+      $extendList="extendArtistList();";
+      break;
+    case "song":
+    default:
+      if(isset($_GET['idalbum']))
+	$loadList="loadSongList('&idalbum=".$_GET['idalbum']."')";
+      else {
+	$loadList="loadSongList('&list=top')";
+      }
+      
+      $extendList="extendSongsList();";
+      break;
+  }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es-es" lang="es-es">
@@ -24,7 +52,7 @@
   <link rel="stylesheet" href="<?php echo _LIBRARY_PATH;?>johnPlayer/build/mediaelementplayer.min.css" />
 </head>
 
-<body onLoad="loadSongList('top')"><!-- onResize="resizeDocument(this)" --> 
+<body onload="<?php echo $loadList; ?>"><!-- onResize="resizeDocument(this)" --> 
   <div data-role="header" data-position="inline">
     <a data-icon="home" href="<?php echo _HOME_PATH;?>" data-ajax="false">Home</a> 
     <h1 id="logo" ><?php echo _LOGO;?></h1>
@@ -36,7 +64,7 @@
   </div>
 
   <div data-role="content">
-    <ul id="songlist" class="ui-listview" data-role='listview'>
+    <ul id="listView" class="ui-listview" data-role='listview'>
 	<li data-theme="c" class="ui-btn ui-btn-icon-right ui-li ui-li-has-thumb ui-btn-down-a ui-btn-up-c">
 		  <div class="ui-btn-inner ui-li">
 		      <div class="ui-btn-text">
@@ -61,10 +89,11 @@
     $(window).scroll(function(){
       if ($(window).scrollTop() == $(document).height() - $(window).height()){
 	//if(!firstRun)
-	  extendSongsList();
+	  <?php echo $extendList; ?>
       }
     });
     var currentKey = '<?php echo hash('sha1',$myKey);?>';
+    var idUser = '<?php echo $_SESSION["iduser"];?>';
   </script>
 </div>
 

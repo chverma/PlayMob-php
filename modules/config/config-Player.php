@@ -6,6 +6,19 @@
   $myKey = date("dd-mm-YYYY")."88886666";
   include_once("mobiledetect.php");
   require("../components/config.inc");
+  require("../components/dbconfig.php");
+  $conn = new BD();
+  if(isset($_POST['filepath'])){
+    $fdbSongPath=$_POST['filepath'];
+    $result = $conn->execute("UPDATE users SET songspath='".$fdbSongPath."' WHERE iduser=".$_SESSION["iduser"]);   
+    if (!$result) { die('Could not query'); }
+  }else{
+    $result = $conn->execute("SELECT songspath FROM users WHERE iduser=".$_SESSION["iduser"]);   
+    if (!$result) { die('Could not query'); }
+    while ($row = pg_fetch_assoc($result)) {
+     $fdbSongPath = $row['songspath'];
+    }
+  }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es-es" lang="es-es">
@@ -25,19 +38,19 @@
 <body onLoad=""><!-- onResize="resizeDocument(this)" --> 
   <div data-role="header" data-position="inline">
     <a data-icon="home" href="<?php echo _HOME_PATH;?>" data-ajax="false">Home</a> 
-    <h1 id="logo" >#Settings<?php echo _LOGO;?></h1>
+    <h1 id="logo" >#<?php echo $_SESSION["user"]."'s settings: Player Config";?></h1>
   </div>
   <div data-role="content" role="main">
   <div class="content-primary" >
       <div data-role="navbar" data-iconpos="top" >
                     <ul>
                         <li>
-                            <a id="btnConfig" href="#" data-theme="a" data-icon="gear" class="ui-btn-active">
+                            <a id="btnConfig" href="#" data-theme="a" data-icon="gear" class="ui-btn-active" data-ajax="false">
                                 #Settings
                             </a>
                         </li>
                         <li>
-                            <a id="btnUser" href="config-User.php" data-theme="a" data-icon="home" >
+                            <a id="btnUser" href="config-User.php" data-theme="a" data-icon="home" data-ajax="false">
                                 #<?php echo $_SESSION["user"];?>
                             </a>
                         </li>
@@ -45,20 +58,22 @@
       </div>
   </div>  
   <div class="content-secondary">
-    <div id="Config" >
-             <div data-role="fieldcontain">
-                    <fieldset data-role="controlgroup">
-                        <label for="filepath">Where are the song files?</label>
-                        <input id="filepath" placeholder="/path/" value="" type="text" />
-                    </fieldset>
-                </div>
-    </div>
+    <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post" data-ajax="false">
+      <div data-role="fieldcontain">
+	<fieldset data-role="controlgroup">
+	  <label for="filepath">Where are the song files?</label>
+	  <input id="filepath" name="filepath" placeholder="/path/to/files/" value="<?php echo $fdbSongPath; ?>" type="text" />
+	</fieldset>
+      </div>
+
+      <div data-role="fieldcontain">
+	<div class="ui-block-b"><button type="submit" data-theme="a" data-icon="check">Save</button></div>
+      </div>	
+    </form>
    </div>
 </div>
   <div data-theme="a" data-role="footer">
-                <h3>
-                    #ModUser
-                </h3>
+                <?php echo _FOOTER ?>
             </div>
 <script>
     var currentKey = '<?php echo hash('sha1',$myKey);?>';

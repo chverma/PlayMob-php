@@ -31,7 +31,7 @@
 	  catch (Exception $e) 
 	  {
 	    print "<h1 class='error'>Db Error->".$e->getMessage()."</h1>";
-	    die();
+	    die("DB_ERROR");
 	  }
 	}
       function execute($sql)

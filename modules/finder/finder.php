@@ -4,7 +4,9 @@
 init();
 function init(){
   $myKey = hash('sha1',date("dd-mm-YYYY")."88886666");
+  $iduser="";
   if(isset($_GET['key'])) (string) $key = $_GET['key'];
+  if(isset($_GET['iduser'])) (string) $iduser = $_GET['iduser'];
 
   if($key==$myKey){
 
@@ -12,19 +14,47 @@ function init(){
 
     switch($action){
       case "gettingSongs":
-	gettingSongs();
+	gettingSongs($iduser);
 	break;
       case "incrementListen":
 	incrementSong();
+	break;
+      case "gettingAlbums":
+	gettingAlbums($iduser);
+	break;
+      case "gettingArtists":
+	gettingArtists($iduser);
 	break;
       default:
 	break;
     }
   }
 }
-function gettingSongs(){
+function gettingSongs($iduser){
   $where=getFilter();
-  getSongs($where);
+  getSongs($iduser,$where);
+}
+
+function gettingAlbums($iduser){
+  $where=getFilter();
+  getAlbums($iduser,$where);
+}
+
+function gettingArtists($iduser){
+  $where=getFilter();
+  getArtists($iduser,$where);
+}
+
+function getLimit(){
+  $orderBy="";
+  $list="";
+  $fromPos = 0;
+  if(isset($_GET['pos'])){ 
+    (integer) $fromPos = $_GET['pos'];
+    $fromPos=$fromPos*6;
+  }
+  $limit = "LIMIT 6 OFFSET $fromPos";
+  return $limit;
 }
 function getFilter(){
   $title="";
@@ -32,50 +62,41 @@ function getFilter(){
   $artist="";
   $toPos=0;
   $fromPos=0;
-  if(isset($_GET['title'])) (string) $title = $_GET['title'];
-  if(isset($_GET['album'])) (string) $album = $_GET['album'];
-  if(isset($_GET['artist'])) (string) $artist = $_GET['artist'];
-  if(isset($_GET['list'])) (string) $list = $_GET['list'];
-  if(isset($_GET['from'])) (string) $from = $_GET['from'];
-  if(isset($_GET['pos'])){ 
-    (integer) $fromPos = $_GET['pos'];
-    $fromPos=$fromPos*6;
-  }
-  //$fromPos=0;
   $where="";
-  if($title!="") $where.="title ILIKE '%".$title."%'";
+  if(isset($_GET['title'])) (string) $title = $_GET['title'];
+  if(isset($_GET['idalbum'])) (string) $album = $_GET['idalbum'];
+  if(isset($_GET['idartist'])) (string) $artist = $_GET['idartist'];
+    
+  if($title!=""){
+    $where.=" AND ";
+    $where.="songs.title ILIKE '%".$title."%'";
+  }
 
   if($album!=""){
-    if($where!=""){
-      if($from=="home") $where.=" OR "; else  $where.=" AND ";
-    }
-    $where.="album ILIKE '%".$album."%'";
+    $where.=" AND ";
+    $where.="albums.idalbum =".$album;
   }
+
   if($artist!=""){
-    if($where!=""){
-      if($from=="home") $where.=" OR "; else  $where.=" AND ";
-    }
-    $where.="artist ILIKE '%".$artist."%'";
+    $where.=" AND ";
+    $where.="artist.idartist = ".$artist;
   }
 
-  if($where=="") $where = "1 = 1";
-
-  if($list){
-    switch($list){
-    case "top":
-      $where.=" ORDER BY listens DESC LIMIT 6 OFFSET $fromPos";
-      break;
-    default:
-      $where.=" ORDER BY listens DESC LIMIT 6 OFFSET $fromPos";
-      break;
-    }
-  }
+  //if($where==""){ $where = "1 = 1"; }
   return $where;
 }
-function getSongs($where="1=1") {
 
-   $conn = new BD();
-   $result = $conn->execute("SELECT * FROM songs WHERE ".$where);
+function getSongs($iduser,$where) {
+    $conn = new BD();
+    $sql = "SELECT songs.title AS title, artist.idartist AS idartist,artist.name AS artist, albums.idalbum AS idalbum, albums.title AS album, songs.listens AS listens,filepath,hashfile ";
+    $sql.= "FROM songs ";
+    $sql.= "INNER JOIN albums ON songs.idalbum = albums.idalbum ";
+    $sql.= "INNER JOIN artist ON albums.idartist = artist.idartist ";
+    $sql.= "WHERE songs.iduser = ".$iduser." ".$where." ";
+    $sql.= "ORDER BY listens DESC ";
+    $sql.= getLimit();
+
+   $result = $conn->execute($sql);
    
     if (!$result) {
      die('Could not query');
@@ -84,15 +105,74 @@ function getSongs($where="1=1") {
    $i = 0;
    $jsondata[0]['first'] = false;
    while ($row = pg_fetch_assoc($result)) {
-     $jsondata[$i]['id'] = $row['id'];
      $jsondata[$i]['title'] = $row['title'];
+     $jsondata[$i]['idartist'] = $row['idartist'];
      $jsondata[$i]['artist'] = $row['artist'];
+     $jsondata[$i]['idalbum'] = $row['idalbum'];
      $jsondata[$i]['album'] = $row['album'];
-     $jsondata[$i]['slength'] = $row['slength'];
+     //$jsondata[$i]['slength'] = $row['slength'];
      $jsondata[$i]['hashfile'] = $row['hashfile'];
      $jsondata[$i]['filepath'] = $row['filepath'];
      $jsondata[$i]['listens'] = $row['listens'];
-     $jsondata[$i]['where'] = $where;
+     $jsondata[$i]['where'] = $sql;
+     $jsondata[$i]['first'] = true;
+     $i++;
+  }
+  echo json_encode($jsondata);
+ }
+
+function getAlbums($iduser,$where) {
+    $conn = new BD();
+    $sql = "SELECT albums.idalbum AS idalbum,albums.title AS title , artist.idartist AS idartist, artist.name AS artist, SUM(listens) as listens ";
+    $sql.= "FROM albums ";
+    $sql.= "INNER JOIN artist ON albums.idartist = artist.idartist ";
+    $sql.= "INNER JOIN songs ON albums.idalbum = songs.idalbum ";
+    $sql.= "WHERE albums.iduser = ".$iduser." ".$where." ";
+    $sql.= "GROUP BY albums.idalbum,artist.idartist,albums.iduser ";
+    $sql.= "ORDER BY albums.idalbum,albums.title, artist.idartist, artist.name, albums.iduser,SUM(listens) DESC ";
+    $sql.= getLimit();
+    $result = $conn->execute($sql);
+   
+    if (!$result) {
+     die('Could not query');
+    }
+   $jsondata = array();
+   $i = 0;
+   $jsondata[0]['first'] = false;
+   while ($row = pg_fetch_assoc($result)) {
+     $jsondata[$i]['idalbum'] = $row['idalbum'];
+     $jsondata[$i]['title'] = $row['title'];
+     $jsondata[$i]['idartist'] = $row['idartist'];
+     $jsondata[$i]['artist'] = $row['artist'];
+     $jsondata[$i]['where'] = $sql;
+     $jsondata[$i]['first'] = true;
+     $i++;
+  }
+  echo json_encode($jsondata);
+ }
+
+function getArtists($iduser,$where) {
+    $conn = new BD();
+    $sql = "SELECT artist.idartist AS idartist, artist.name AS name,SUM(songs.listens) as listens ";
+    $sql.= "FROM artist ";
+    $sql.= "INNER JOIN songs ON artist.idartist = songs.idartist ";
+    $sql.= "WHERE artist.iduser = ".$iduser." ".$where." ";
+    $sql.= "GROUP BY artist.idartist,artist.iduser ";
+    $sql.= "ORDER BY artist.idartist, artist.name,artist.iduser,SUM(listens) DESC ";
+    $sql.= getLimit();
+
+    $result = $conn->execute($sql);
+   
+    if (!$result) {
+     die('Could not query');
+    }
+   $jsondata = array();
+   $i = 0;
+   $jsondata[0]['first'] = false;
+   while ($row = pg_fetch_assoc($result)) {
+     $jsondata[$i]['idartist'] = $row['idartist'];
+     $jsondata[$i]['name'] = $row['name'];
+     $jsondata[$i]['where'] = $sql;
      $jsondata[$i]['first'] = true;
      $i++;
   }

@@ -20,6 +20,9 @@
   <link rel="stylesheet" href="<?php echo _LIBRARY_PATH;?>JQueryMobile/jquery.mobile-1.0b2.min.css" />
   <script src="<?php echo _LIBRARY_PATH;?>JQueryMobile/jquery.min.1.6.js"></script><!--http://code.jquery.com/jquery-1.6.2.min.js-->
   <script src="<?php echo _LIBRARY_PATH;?>JQueryMobile/jquery.mobile-1.0b2.min.js"></script>
+  <!--ToastMessage -->
+  <script src="<?php echo _LIBRARY_PATH;?>akquinet-toastmessage/jquery.toastmessage.js" type="text/javascript"></script>
+  <link href="<?php echo _LIBRARY_PATH;?>akquinet-toastmessage/jquery.toastmessage.css" rel="stylesheet" type="text/css" />
   <!-- modifications -->
   <!--script type="text/javascript" src="ajax.js"></script-->
   <link rel="stylesheet" href="styles.css" />
@@ -41,22 +44,20 @@
   </div>
 
   <div data-role="fieldcontain">
-    <div class="ui-block-b"><button type="submit" data-theme="a">Submit</button></div>
+    <div class="ui-block-a"><button type="submit" data-theme="a" name="login" >Login</button></div>
+    <div class="ui-block-b"><button type="submit" data-theme="a" name="register">Register</button></div>
   </div>	
 </form>
 </div>
 <div data-theme="a" data-role="footer">
-                <h3>
-                    #Login
-                </h3>
+                <?php echo _FOOTER ?>
             </div>  
 <script>
     var currentKey = '<?php echo hash('sha1',$myKey);?>';
     <?php
-      //if($msg!=""){
-	echo "document.getElementById('username').setAttribute('class','error');";
-	echo "document.getElementById('password').setAttribute('class','error');";
-      //}
+      if($msg!=""){
+	      echo "$().toastmessage('showErrorToast', '$msg!');";
+      }
     ?>
 </script>
 </body>

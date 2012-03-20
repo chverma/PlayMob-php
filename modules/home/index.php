@@ -1,10 +1,10 @@
 <?php
   session_start();
+  require("../components/config.inc");
   if(!isset($_SESSION["user"]))
-    echo "<script>document.location='/PlayMob/';</script>";
+    echo "<script>document.location='"._LOGINPATH."';</script>";
 
   $myKey = date("dd-mm-YYYY")."88886666";
-  require("../components/config.inc");
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es-es" lang="es-es">
@@ -25,6 +25,7 @@
   <div data-role="header" data-position="inline">
     <!--a data-icon="home" href="" data-ajax="false">Home</a--> 
     <h1 id="logo" >#<?php echo $_SESSION["user"];?>'s music</h1>
+    <a id="btnLogOut" href="<?php echo _LOGINPATH."login.php?logOut=true";?>" data-icon="back" data-ajax="false" class="ui-btn-right">Log Out</a>
   </div>
 <div data-role="content" role="main">
   <ul id="categories" class="ui-listview" data-role='listview'>
@@ -38,10 +39,8 @@
 	</li>
     </ul>
 </div>
-<div data-theme="a" data-role="footer">
-                <h3>
-                    #ModUser
-                </h3>
+<div data-role="footer" data-position="inline">
+                <?php echo _FOOTER ?>
             </div>  
 <script>
     var currentKey = '<?php echo hash('sha1',$myKey);?>';

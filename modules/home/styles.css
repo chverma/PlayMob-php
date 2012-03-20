@@ -1,0 +1,27 @@
+.links:link { /* unvisited link */
+  color:black;
+}      
+.links:visited {/* visited link */
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0.6em 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Helvetica,Arial,sans-serif;
+    text-decoration: none;
+    color: #444444;
+    font-weight: bold;
+    text-shadow: 0 1px 1px #F6F6F6;
+}
+.links:hover { /* mouse over link */
+  color:black;
+} 
+.links:active {/* selected link */ 
+  color:black;
+  
+}
+.ui-li-heading{
+  padding-left:20px;
+}
