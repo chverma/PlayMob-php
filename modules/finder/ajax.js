@@ -424,9 +424,10 @@ function processSongData(data) {
 		  var lastLine = listView.lastChild.lastChild;
 		  if(lastLine){
 		    lastLine = listView.lastChild.lastChild.nodeValue;
-		    if(lastLine!="No more results")
+		    if(lastLine!="No more results"){
 		      songResult.appendChild(document.createTextNode("No more results"));
 		      listView.appendChild(songResult);
+			}
 		  }
 		}
 		else{
@@ -436,6 +437,7 @@ function processSongData(data) {
 		
 	}
      });
+
      var lastLine = listView.lastChild.lastChild;
      if(lastLine){
       lastLine = listView.lastChild.lastChild.nodeValue;
